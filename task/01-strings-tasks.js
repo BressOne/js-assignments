@@ -20,8 +20,8 @@
  *   '',  'bb'  => 'bb'
  */
 export function concatenateStrings(value1, value2) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return value1+value2;
+  
 }
 
 /**
@@ -36,8 +36,8 @@ export function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 export function getStringLength(value) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return value.length;
+  
 }
 
 /**
@@ -54,7 +54,7 @@ export function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 export function getStringFromTemplate(firstName, lastName) {
-  /* implement your code here */
+  return "Hello, "+firstName+" "+lastName;
   throw new Error('Not implemented');
 }
 
