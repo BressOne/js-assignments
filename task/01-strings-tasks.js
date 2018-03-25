@@ -1,5 +1,5 @@
 
-/** *****************************************************************************************
+/* *****************************************************************************************
  *                                                                                          *
  * Plese read the following tutorial before implementing tasks:                             *
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String  *
@@ -7,7 +7,7 @@
  ********************************************************************************************/
 
 
-/**
+/*
  * Returns the result of concatenation of two strings.
  *
  * @param {string} value1
@@ -24,7 +24,7 @@ export function concatenateStrings(value1, value2) {
   
 }
 
-/**
+/*
  * Returns the length of given string.
  *
  * @param {string} value
@@ -40,7 +40,7 @@ export function getStringLength(value) {
   
 }
 
-/**
+/*
  * Returns the result of string template and given parameters firstName and lastName.
  * Please do not use concatenation, use template string :
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings
@@ -58,7 +58,7 @@ export function getStringFromTemplate(firstName, lastName) {
   throw new Error('Not implemented');
 }
 
-/**
+/*
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
  *
  * @param {string} value
@@ -74,7 +74,7 @@ export function  extractNameFromTemplate(value) {
 }
 
 
-/**
+/*
  * Returns a first char of the given string.
  *
  * @param {string} value
@@ -89,7 +89,7 @@ export function getFirstChar(value) {
   throw new Error('Not implemented');
 }
 
-/**
+/*
  * Removes a leading and trailing whitespace characters from string.
  *
  * @param {string} value
@@ -105,7 +105,7 @@ export function removeLeadingAndTrailingWhitespaces(value) {
   throw new Error('Not implemented');
 }
 
-/**
+/*
  * Returns a string that repeated the specified number of times.
  *
  * @param {string} value
@@ -121,7 +121,7 @@ export function repeatString(value, count) {
   throw new Error('Not implemented');
 }
 
-/**
+/*
  * Remove the first occurrence of string inside another string
  *
  * @param {string} str
@@ -138,7 +138,7 @@ export function removeFirstOccurrences(str, value)  {
   throw new Error('Not implemented');
 }
 
-/**
+/*
  * Remove the first and last angle brackets from tag string
  *
  * @param {string} str
@@ -155,7 +155,7 @@ export function unbracketTag(str) {
 }
 
 
-/**
+/*
  * Converts all characters of the specified string into the upper case
  *
  * @param {string} str
@@ -170,7 +170,7 @@ export function convertToUpperCase(str) {
   throw new Error('Not implemented');
 }
 
-/**
+/*
  * Extracts e-mails from single string with e-mails list delimeted by semicolons
  *
  * @param {string} str
@@ -186,7 +186,7 @@ export function extractEmails(str) {
   throw new Error('Not implemented');
 }
 
-/**
+/*
  * Returns the string representation of rectangle with specified width and height
  * using pseudograhic chars
  *
@@ -215,7 +215,7 @@ export function getRectangleString(width, height) {
 }
 
 
-/**
+/*
  * Encode specified string with ROT13 cipher
  * See details:  https://en.wikipedia.org/wiki/ROT13
  *
@@ -236,7 +236,7 @@ export function encodeToRot13(str) {
   throw new Error('Not implemented');
 }
 
-/**
+/*
  * Returns true if the value is string; otherwise false.
  * @param {string} value
  * @return {boolean}
@@ -255,7 +255,7 @@ export function isString(value) {
 }
 
 
-/**
+/*
  * Returns playid card id.
  *
  * Playing cards inittial deck inclides the cards in the following order:
