@@ -36,7 +36,7 @@ export function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 export function getStringLength(value) {
-  return value.length;
+  return value.length++;
   
 }
 
@@ -54,8 +54,8 @@ export function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 export function getStringFromTemplate(firstName, lastName) {
-  return "Hello, "+firstName+" "+lastName;
-  throw new Error('Not implemented');
+  return `Hello, ${firstName} ${lastName}`;
+  
 }
 
 /*
@@ -69,8 +69,7 @@ export function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 export function  extractNameFromTemplate(value) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return value.replace('Hello, ','');  
 }
 
 
@@ -86,7 +85,7 @@ export function  extractNameFromTemplate(value) {
  */
 export function getFirstChar(value) {
   /* implement your code here */
-  throw new Error('Not implemented');
+  return value[0];
 }
 
 /*
@@ -101,8 +100,7 @@ export function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 export function removeLeadingAndTrailingWhitespaces(value) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return value.trim().replace('/t','');
 }
 
 /*
@@ -117,8 +115,23 @@ export function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 export function repeatString(value, count) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return value.repeat(count);
+  /* See the bad implementation below
+
+
+  let i =0;
+  let result = '';
+  if (count=0) {
+    return result;
+  } else {
+      while (i<count) {
+      result = +value;
+      i++;
+      }
+    return result;
+  }
+  */
+  
 }
 
 /*
