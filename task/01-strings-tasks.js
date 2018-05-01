@@ -36,7 +36,7 @@ export function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 export function getStringLength(value) {
-  return value.length++;
+  return value.length+1;
   
 }
 
