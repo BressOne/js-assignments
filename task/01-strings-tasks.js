@@ -151,8 +151,8 @@ export function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 export function removeFirstOccurrences(str, value)  {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return str.replace(value, '');
+  
 }
 
 /*
@@ -167,8 +167,8 @@ export function removeFirstOccurrences(str, value)  {
  *   '<a>' => 'a'
  */
 export function unbracketTag(str) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return str.slice(1,(str.length-1));
+  
 }
 
 
@@ -183,8 +183,7 @@ export function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 export function convertToUpperCase(str) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return str.convertToUpperCase;
 }
 
 /*
@@ -199,8 +198,7 @@ export function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 export function extractEmails(str) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return str.split(';',256);
 }
 
 /*
@@ -227,8 +225,15 @@ export function extractEmails(str) {
  *
  */
 export function getRectangleString(width, height) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+ 
+  if (width>1 && height>1) {
+    let rectTopAndBottom =  '─'.repeat(width-2);
+    
+    let rectBody = '│' + ' '.repeat(width-2) + '│\n'
+    return `┌${rectTopAndBottom}┐\n` + rectBody.repeat(height-2) + `└${rectTopAndBottom}┘\n`
+  }
+  else throw new Error('incorrect value');
+  
 }
 
 
