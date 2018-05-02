@@ -225,16 +225,16 @@ export function extractEmails(str) {
  *
  */
 export function getRectangleString(width, height) {
- 
+ /* simple rectangle for w/h input*/
   if (width>1 && height>1) {
     let rectTopAndBottom =  '─'.repeat(width-2);
-    
     let rectBody = '│' + ' '.repeat(width-2) + '│\n'
     return `┌${rectTopAndBottom}┐\n` + rectBody.repeat(height-2) + `└${rectTopAndBottom}┘\n`
   }
   else throw new Error('incorrect value');
   
 }
+/\
 
 
 /*
