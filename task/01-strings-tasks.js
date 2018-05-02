@@ -234,7 +234,7 @@ export function getRectangleString(width, height) {
   else throw new Error('incorrect value');
   
 }
-/\
+
 
 
 /*
@@ -254,9 +254,18 @@ export function getRectangleString(width, height) {
  *
  */
 export function encodeToRot13(str) {
-  /* implement your code here */
-  throw new Error('Not implemented');
-}
+  let position = 0;
+  let pattern = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  let key = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+  let resultString = '';
+  while (position<str.length) {
+    resultString += (key[pattern.indexOf(str[position])]);
+    position++;
+  }
+  return resultString;
+  
+  }
+
 
 /*
  * Returns true if the value is string; otherwise false.
@@ -272,8 +281,13 @@ export function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 export function isString(value) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  let flag = false;
+  if (typeof value == 'number') {
+    return flag = true;
+  } else {
+    return flag;
+  }
+  
 }
 
 
@@ -301,7 +315,13 @@ export function isString(value) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-export function getCardId(value) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+export function getCardId(value) {''
+let array = [
+'A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
+'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
+'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
+'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠']  
+array.findIndex(value);
+/* implement your code here */
+  
 }
