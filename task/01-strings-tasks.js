@@ -36,7 +36,8 @@ export function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 export function getStringLength(value) {
-  return value.length+1;
+  let length = 0;
+  return length= value.length;
   
 }
 
@@ -54,7 +55,7 @@ export function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 export function getStringFromTemplate(firstName, lastName) {
-  return `Hello, ${firstName} ${lastName}`;
+  return `Hello, ${firstName} ${lastName}!`;
   
 }
 
@@ -69,7 +70,10 @@ export function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 export function  extractNameFromTemplate(value) {
+  return value.slice(7, (value.length-1));
+  /*tryed some non elegant solution
   return value.replace('Hello, ','');  
+  */
 }
 
 
