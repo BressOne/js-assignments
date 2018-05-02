@@ -36,8 +36,7 @@ export function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 export function getStringLength(value) {
-  let length = 0;
-  return length= value.length;
+  return value.length;
   
 }
 
@@ -104,7 +103,7 @@ export function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 export function removeLeadingAndTrailingWhitespaces(value) {
-  return value.trim().replace('/t','');
+  return value.trim().replace('/t', '');
 }
 
 /*
@@ -167,7 +166,7 @@ export function removeFirstOccurrences(str, value)  {
  *   '<a>' => 'a'
  */
 export function unbracketTag(str) {
-  return str.slice(1,(str.length-1));
+  return str.slice(1, (str.length-1));
   
 }
 
@@ -198,7 +197,7 @@ export function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 export function extractEmails(str) {
-  return str.split(';',256);
+  return str.split(';', 256);
 }
 
 /*
@@ -228,8 +227,8 @@ export function getRectangleString(width, height) {
  /* simple rectangle for w/h input*/
   if (width>1 && height>1) {
     let rectTopAndBottom =  '─'.repeat(width-2);
-    let rectBody = '│' + ' '.repeat(width-2) + '│\n'
-    return `┌${rectTopAndBottom}┐\n` + rectBody.repeat(height-2) + `└${rectTopAndBottom}┘\n`
+    let rectBody = '│' + ' '.repeat(width-2) + '│\n';
+    return `┌${rectTopAndBottom}┐\n` + rectBody.repeat(height-2) + `└${rectTopAndBottom}┘\n`;
   }
   else throw new Error('incorrect value');
   
@@ -263,10 +262,7 @@ export function encodeToRot13(str) {
     position++;
   }
   return resultString;
-  
   }
-
-
 /*
  * Returns true if the value is string; otherwise false.
  * @param {string} value
@@ -317,11 +313,11 @@ export function isString(value) {
  */
 export function getCardId(value) {''
 let array = [
-'A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
-'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
-'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
-'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠']  
-array.findIndex(value);
+'A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣', 
+'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦', 
+'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥', 
+'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'];  
+return array.findIndex(value);
 /* implement your code here */
   
 }
