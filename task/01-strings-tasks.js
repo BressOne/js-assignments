@@ -26,7 +26,7 @@ export function unbracketTag(str) {
   return str.slice(1, (str.length-1));
 }
 export function convertToUpperCase(str) {
-  return str.convertToUpperCase;
+  return str.toUpperCase();
 }
 export function extractEmails(str) {
   return str.split(';', 256);
@@ -52,8 +52,8 @@ export function encodeToRot13(str) {
   }
 export function isString(value) {
   let flag = false;
-  if (typeof value === 'number') {
-    return flag = true;
+  if (typeof value === 'string') {
+    return !flag;
   } else {
     return flag;
   }
