@@ -41,8 +41,8 @@ export function getRectangleString(width, height) {
 }
 export function encodeToRot13(str) {
   let position = 0;
-  let pattern = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-  let key = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+  let pattern = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ~!@#$%^&*()_+`1234567890-=\|/?.>,<]}[{";:';
+  let key = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm ~!@#$%^&*()_+`1234567890-=\|/?.>,<]}[{";:';
   let resultString = '';
   while (position<str.length) {
     resultString += (key[pattern.indexOf(str[position])]);
@@ -52,17 +52,21 @@ export function encodeToRot13(str) {
   }
 export function isString(value) {
   let flag = false;
-  if (typeof value === 'string') {
-    return !flag;
+  if (value === undefined) {
+    return value;
   } else {
-    return flag;
+    if (typeof value === 'string') {
+      return !flag;
+    } else {
+      return flag;
+    }
   }
-}
+ }
 export function getCardId(value) {
-let array = [
+let cardsArray = [
 'A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣', 
 'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦', 
 'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥', 
 'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'];  
-return array.findIndex(value);
+return cardsArray.indexOf(value);
 }
