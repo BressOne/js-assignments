@@ -55,7 +55,7 @@ export function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 export function getAverage(value1, value2) {
-  return (value1+value2)/2
+  return (value1+value2)/2;
 }
 
 /**
@@ -144,7 +144,7 @@ export function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 export function parseNumberFromString(value) {
-  return Number.parseInt(value);
+  return Number.parseFloat(value);
 }
 
 /**
@@ -203,8 +203,17 @@ return Math.round(num/(Math.pow(10, pow)))*Math.pow(10, pow);
  *   17 => true
  */
 export function isPrime(n) {
-  return (someNumber % 2 == 0) ? false : true;
-}
+  if ( n === 2){
+    return true;
+  }
+    for (let index = 2; index < Math.sqrt(n)+1; index++) {
+      if (n % index === 0) {
+      return false
+      }  
+    }
+  return true;
+  }
+
 
 /**
  * Tries to convert value to number and returns it if conversion was successfull;
