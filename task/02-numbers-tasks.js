@@ -112,7 +112,7 @@ export function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 export function getAngleBetweenVectors(x1, y1, x2, y2) {
-  return (x1*y1 + x2*y2)/(Math.sqrt(Math.pow(x1, 2)+Math.pow(y1, 2))*Math.sqrt(Math.pow(x2, 2)+Math.pow(y2, 2)))
+  return Math.acos((x1*x2 + y1*y2)/(Math.sqrt(Math.pow(y1, 2)+Math.pow(x1, 2))*Math.sqrt(Math.pow(y2, 2)+Math.pow(x2, 2))))
 }
 
 /**
@@ -161,7 +161,7 @@ export function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 export function getParallelipidedDiagonal(a, b, c) {
-  return Math.sqrt(Math.pow(c, 2) + Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2)))
+  return Math.round(Math.sqrt(Math.pow(c, 2) + Math.pow(a, 2) + Math.pow(b, 2)), 15)
 }
 
 /**
@@ -203,7 +203,7 @@ return Math.round(num/(Math.pow(10, pow)))*Math.pow(10, pow);
  *   17 => true
  */
 export function isPrime(n) {
-  if ( n === 2){
+  if ( n < 4){
     return true;
   }
     for (let index = 2; index < Math.sqrt(n)+1; index++) {
@@ -231,9 +231,10 @@ export function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 export function toNumber(value, def) {
-  if (condition) {
-    
+  let result = Number.parseInt(value)
+  if (isNaN(result) === true) {
+    return def;
   } else {
-    
+    return result;
   }
 }
