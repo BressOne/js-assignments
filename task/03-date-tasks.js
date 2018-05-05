@@ -21,8 +21,7 @@
  *    'Sun, 17 May 1998 03:00:00 GMT+01' => Date()
  */
 export function parseDataFromRfc2822(value) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return Date.parse(value)
 }
 
 /**
@@ -37,8 +36,7 @@ export function parseDataFromRfc2822(value) {
  *    '2016-01-19T08:07:37Z' => Date()
  */
 export function parseDataFromIso8601(value) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return Date.parse(value)
 }
 
 
@@ -57,8 +55,21 @@ export function parseDataFromIso8601(value) {
  *    Date(2015,1,1)    => false
  */
 export function isLeapYear(date) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  let yearCheck = date.getFullYear();
+  let resilt = false;
+if (yearCheck % 4 !== 0) {
+  resilt = false;
+} 
+else if (yearCheck % 100 !== 0){
+  resilt = true;
+}
+else if (yearCheck % 400 !== 0){
+  resilt = false;
+}
+else {
+  resilt = true;
+}
+return resilt;
 }
 
 
