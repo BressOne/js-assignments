@@ -56,20 +56,20 @@ export function parseDataFromIso8601(value) {
  */
 export function isLeapYear(date) {
   let yearCheck = date.getFullYear();
-  let resilt = false;
+  let result = false;
 if (yearCheck % 4 !== 0) {
-  resilt = false;
+  result = false;
 } 
 else if (yearCheck % 100 !== 0){
-  resilt = true;
+  result = true;
 }
 else if (yearCheck % 400 !== 0){
-  resilt = false;
+  result = false;
 }
 else {
-  resilt = true;
+  result = true;
 }
-return resilt;
+return result;
 }
 
 
@@ -89,8 +89,19 @@ return resilt;
  *    Date(2000,1,1,10,0,0),  Date(2000,1,1,15,20,10,453)   => "05:20:10.453"
  */
 export function timeSpanToString(startDate, endDate) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  function msToTime(duration) {
+    var milliseconds = parseInt((duration%1000)/100)
+        , seconds = parseInt((duration/1000)%60)
+        , minutes = parseInt((duration/(1000*60))%60)
+        , hours = parseInt((duration/(1000*60*60))%24);
+
+    hours = (hours < 10) ? "0" + hours : hours;
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+    return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+  }
+  return msToTime(startDate.getTime()-endDate.getTime());
 }
 
 
@@ -109,6 +120,16 @@ export function timeSpanToString(startDate, endDate) {
  *    Date.UTC(2016,3,5,21, 0) => Math.PI/2
  */
 export function angleBetweenClockHands(date) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  let hoursRad = date.getHours();
+  if (hoursRad>11) {
+    hoursRad -= 12;
+  }
+  hoursRad = hoursRad*(Math.PI*2/12);
+  let minutesRad = date.getMinutes()*(Math.PI*2/60);
+  if (hoursRad>minutesRad) {
+    return hoursRad-minutesRad;
+  }
+  else {
+    return minutesRad-hoursRad
+  }
 }

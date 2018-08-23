@@ -29,8 +29,17 @@
  *
  */
 export function getFizzBuzz(num) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  var result;
+  if (num%3 === 0) {
+    result += "Fizz"
+  }
+  if (num%5 === 0) {
+    result += "Buzz"
+  }
+  if (num%3 !== 0 && num%5 !== 0) {
+    result = num;
+  }
+  return result;
 }
 
 
@@ -46,8 +55,12 @@ export function getFizzBuzz(num) {
  *   10 => 3628800
  */
 export function getFactorial(n) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  var result = 1;
+  for (let index = 1; index <= n; index++) {
+    result *=index;
+        
+  }
+  return result;
 }
 
 
@@ -64,8 +77,12 @@ export function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 export function getSumBetweenNumbers(n1, n2) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  var result;
+  for (let index = n1; index <= n2; index++) {
+    result += n1;
+    
+  }
+  return result;
 }
 
 
@@ -85,8 +102,12 @@ export function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 export function isTriangle(a, b, c) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  if (arguments[0]+arguments[1] < arguments[2] || 
+      arguments[0]+arguments[2] < arguments[1] ||
+      arguments[1]+arguments[2] < arguments[0]) {
+    return false;
+  }
+  return true;
 }
 
 
@@ -123,8 +144,18 @@ export function isTriangle(a, b, c) {
  *
  */
 export function doRectanglesOverlap(rect1, rect2) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  
+  if (rect2.left >= rect1.left && rect2.left <= (rect1.left+rect1.width) && rect2.top >= rect1.top && rect2.top <=(rect1.top+rect1.heiht)) {
+    return true;
+  }
+  else if (rect2.left >= rect1.left && rect2.left <= (rect1.left+rect1.width) && (rect2.top+rect2.height) >= rect1.top && (rect2.top+rect2.height) <=(rect1.top+rect1.height)) {
+    return true;
+  }
+  else if ((rect2.left+rect2.width) >= rect1.left && (rect2.left+rect2.width) <= (rect1.left+rect1.width) && (rect2.top+rect2.height) >= rect1.top && (rect2.top+rect2.height) <=(rect1.top+rect1.height)) {
+    return true;
+  }
+  else return false;
+
 }
 
 
@@ -155,8 +186,11 @@ export function doRectanglesOverlap(rect1, rect2) {
  *
  */
 export function isInsideCircle(circle, point) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  if ( Math.sqrt(Math.pow((point.y-circle.center.y), 2) + Math.pow((point.x-circle.center.x), 2))<= circle.radius ){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 
@@ -172,9 +206,21 @@ export function isInsideCircle(circle, point) {
  *   'entente' => null
  */
 export function findFirstSingleChar(str) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+ for (let index = 0; index < str.length; index++) {
+   
+   if (str.indexOf(str[index], index+1) === -1) {
+   return str[index];  
+   }
+   
+ }
+  
 }
+  
+  
+
+
+
+
 
 
 /**
@@ -200,8 +246,11 @@ export function findFirstSingleChar(str) {
  *
  */
 export function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  var resultStr;
+  isStartIncluded ? resultStr +="[" : resultStr +="(";
+  resultStr += a + ", " + b;
+  isEndIncluded ? resultStr +="]" : resultStr +=")";
+  return resultStr;
 }
 
 
@@ -218,8 +267,12 @@ export function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 export function reverseString(str) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  var resultStr = '';
+  for (let index = str.length-1; index >= 0; index--) {
+    resultStr += str[index];
+    
+  }
+  return resultStr;
 }
 
 
